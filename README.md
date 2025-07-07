@@ -116,7 +116,7 @@ e-commerce/
 
 ## Ekran Görüntüleri
 
-> Buraya uygulamanın ana sayfası, ürün detay, sepet ve giriş/kayıt ekranlarından ekran görüntüleri ekleyebilirsin.
+> Buraya uygulamanın ana sayfası, ürün detay, sepet ve giriş/kayıt ekranlarından ekran görüntüleri gelecek.
 
 ---
 
