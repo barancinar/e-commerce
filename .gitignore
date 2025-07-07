@@ -1,0 +1,21 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.db
+*.db-shm
+*.db-wal
+
+# VS Code
+.vscode/
+
+
+# Node.js / React
+Client/node_modules/
+Client/build/
+Client/dist/
+Client/.env
+Client/.env.local
