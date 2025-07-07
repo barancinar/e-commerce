@@ -14,7 +14,7 @@ import {
 import { useState } from "react";
 import { useForm, type FieldValues } from "react-hook-form";
 import { loginUser } from "./accountSlice";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { useAppDispatch } from "../../store/store";
 import { getCart } from "../cart/cartSlice";
 
@@ -23,6 +23,7 @@ export default function LoginPage() {
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const {
         register,
@@ -38,7 +39,7 @@ export default function LoginPage() {
     async function submitForm(data: FieldValues) {
         await dispatch(loginUser(data));
         await dispatch(getCart());
-        navigate("/catalog");
+        navigate(location.state?.from || "/catalog");
     }
 
     return (

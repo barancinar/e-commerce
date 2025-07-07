@@ -3,6 +3,7 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20250707102151_UpdateOrderTables")]
+    partial class UpdateOrderTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.4");
@@ -164,9 +167,6 @@ namespace API.Migrations
                     b.Property<string>("CustomerId")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("DeliveryFree")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");
 
@@ -182,9 +182,6 @@ namespace API.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("SubTotal")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
 
                     b.ToTable("Orders");
@@ -195,6 +192,9 @@ namespace API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("DeliveryFree")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("INTEGER");
@@ -215,6 +215,9 @@ namespace API.Migrations
 
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("SubTotal")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
